@@ -107,10 +107,7 @@ public class MSButton
         flagged = clicked = false;
         Interactive.add( this ); // register it with the manager
     }
-public boolean isClicked()
-    {
-        return clicked;
-    }
+
     // called by manager
     public void mousePressed ()
     {
@@ -125,9 +122,7 @@ public boolean isClicked()
         else if (mines.contains(this)){
           displayLosingMessage();
           
-        for(int i=0;i<mines.size();i++)
-                if(mines.get(i).isClicked()==false)
-                mines.get(i).mousePressed();
+
         }
         else if(countMines(myRow,myCol)>0){
           setLabel(str(countMines(myRow,myCol)));}
