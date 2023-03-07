@@ -127,30 +127,34 @@ public class MSButton
         else if(countMines(myRow,myCol)>0){
           setLabel(str(countMines(myRow,myCol)));}
         else{
-          if(isValid(myRow-1,myCol))
-                if(!mines.contains(buttons[myRow-1][myCol]))
-                    buttons[myRow-1][myCol].mousePressed();
-           if(isValid(myRow-1,myCol-1))
-                if(!mines.contains(buttons[myRow-1][myCol-1]))
-                    buttons[myRow-1][myCol-1].mousePressed();
-            if(isValid(myRow-1,myCol+1))
-                if(!mines.contains(buttons[myRow-1][myCol+1]))
-                    buttons[myRow-1][myCol+1].mousePressed();
-            if(isValid(myRow,myCol-1))
-                if(!mines.contains(buttons[myRow][myCol-1]))
-                    buttons[myRow][myCol-1].mousePressed();
-            if(isValid(myRow,myCol+1))
-                if(!mines.contains(buttons[myRow][myCol+1]))
-                    buttons[myRow][myCol+1].mousePressed();
-            if(isValid(myRow+1,myCol-1))
-                if(!mines.contains(buttons[myRow+1][myCol]))
-                    buttons[myRow+1][myCol-1].mousePressed();
-            if(isValid(myRow+1,myCol))
-                if(!mines.contains(buttons[myRow+1][myCol]))
-                    buttons[myRow+1][myCol].mousePressed();
-            if(isValid(myRow+1,myCol+1))
-                if(!mines.contains(buttons[myRow+1][myCol]))
-                    buttons[myRow+1][myCol+1].mousePressed();
+          for(int r = myRow-1; r<myRow+2;r++)
+            for(int c = myCol-1; c<myCol+2; c++)
+              if (isValid(r,c)&&!buttons[r][c].clicked==true)
+                buttons[r][c].mousePressed();
+          //if(isValid(myRow-1,myCol)){
+          //      if(!mines.contains(buttons[myRow-1][myCol])){
+          //          buttons[myRow-1][myCol].mousePressed();}}
+          //if(isValid(myRow-1,myCol-1)){
+          //      if(!mines.contains(buttons[myRow-1][myCol-1])){
+          //          buttons[myRow-1][myCol-1].mousePressed();}}
+          //  if(isValid(myRow-1,myCol+1)){
+          //      if(!mines.contains(buttons[myRow-1][myCol+1])){
+          //          buttons[myRow-1][myCol+1].mousePressed();}}
+          //  if(isValid(myRow,myCol-1)){
+          //      if(!mines.contains(buttons[myRow][myCol-1])){
+          //          buttons[myRow][myCol-1].mousePressed();}}
+          //  if(isValid(myRow,myCol+1)){
+          //      if(!mines.contains(buttons[myRow][myCol+1])){
+          //          buttons[myRow][myCol+1].mousePressed();}}
+          //  if(isValid(myRow+1,myCol-1))
+          //      if(!mines.contains(buttons[myRow+1][myCol]))
+          //          buttons[myRow+1][myCol-1].mousePressed();
+          //  if(isValid(myRow+1,myCol))
+          //      if(!mines.contains(buttons[myRow+1][myCol]))
+          //          buttons[myRow+1][myCol].mousePressed();
+          //  if(isValid(myRow+1,myCol+1))
+          //      if(!mines.contains(buttons[myRow+1][myCol]))
+          //          buttons[myRow+1][myCol+1].mousePressed();
           
           
         }
